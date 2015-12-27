@@ -78,4 +78,5 @@ RUN apt-get update && apt-get install -y \
 # Install Zip
 #RUN docker-php-ext-install zip
 
+WORKDIR /var/www
 CMD ["php-fpm"]
