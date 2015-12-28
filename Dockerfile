@@ -1,82 +1,73 @@
 # PHP Docker Image + Necessary Extensions + Tools
 
-FROM php:7.0-fpm
+FROM servivum/debian:jessie
 MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
-# Install extensions and ssmtp
+# Versions
+ENV PHP_VERSION "7.0.1"
+
+# Install build essentials
 RUN apt-get update && apt-get install -y \
-	ssmtp \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
+    build-essential \
+    libfcgi-dev \
+    libfcgi0ldbl \
+    libjpeg62-turbo-dbg \
     libmcrypt-dev \
+    libssl-dev \
+    libc-client2007e \
+    libc-client2007e-dev \
+    libxml2-dev \
+    libbz2-dev \
+    libcurl4-openssl-dev \
+    libjpeg-dev \
     libpng12-dev \
-    && docker-php-ext-install iconv mcrypt \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install gd
+    libfreetype6-dev \
+    libkrb5-dev \
+    libpq-dev \
+    libreadline6-dev \
+    librecode-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    pkg-config \
+    && \
+    mkdir -p /usr/src/php
 
-# Modify ssmtp settings
-#RUN sed -ri -e 's/^(mailhub=).*/\1smtp-server/' \
-#-e 's/^#(FromLineOverride)/\1/' /etc/ssmtp/ssmtp.conf
+# Load and compile PHP
+RUN cd /usr/src/php && \
+    wget http://de1.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror -O php-${PHP_VERSION}.tar.gz && \
+    tar -xvzf php-${PHP_VERSION}.tar.gz && \
+    cd php-${PHP_VERSION}/ && \
+    ./configure \
+    --disable-cgi \
+    --enable-fpm \
+    --enable-mysqlnd \
+    --with-config-file-path="/etc/php" \
+    --with-config-file-scan-dir="/etc/php/conf.d" \
+    --with-curl \
+    --with-gd \
+    --with-pdo-mysql \
+    --with-mysqli \
+    --with-openssl \
+    --with-readline \
+    --with-recode \
+    --with-zlib \
+    && \
+    make && \
+    make install
 
-# Alternative command for ssmtp
-#RUN echo "Mailhub=smtp" > /etc/ssmtp/ssmtp.conf && \
-#    echo "FromLineOverride=Yes" >> /etc/ssmtp/ssmtp.conf
+# Add php-fpm to supervisor
+COPY etc/supervisor/conf.d/php-fpm.conf /etc/supervisor/conf.d/php-fpm.conf
 
-# Update package index
-# RUN apt-get update
-
-# Install APC (Beta)
-#RUN pecl install apcu-beta
-#RUN echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini
-
-# Install bcmath
-#RUN docker-php-ext-install bcmath
-
-# Install bz2
-#RUN apt-get install -y libbz2-dev
-#RUN docker-php-ext-install bz2
-
-# Install calendar
-#RUN docker-php-ext-install calendar
-
-# Install dba
-#RUN docker-php-ext-install dba
-
-# Install GD
-#RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng12-dev
-#RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
-#RUN docker-php-ext-install gd
-
-# Install gettext
-#RUN docker-php-ext-install gettext
-
-# Install iconv
-#RUN docker-php-ext-install iconv
-
-# Install mbstring
-#RUN docker-php-ext-install mbstring
-
-# Install mcrypt
-#RUN apt-get install -y libmcrypt-dev
-#RUN docker-php-ext-install mcrypt
-
-# Install mysqli
-#RUN docker-php-ext-install mysqli
-
-# Install PDO
-#RUN docker-php-ext-install pdo_mysql
-#RUN apt-get install -y libsqlite3-dev
-#RUN docker-php-ext-install pdo_sqlite
-
-# Install XSL
-#RUN apt-get install -y libxslt-dev
-#RUN docker-php-ext-install xsl
-
-# Install xmlrpc
-#RUN docker-php-ext-install xmlrpc
-
-# Install Zip
-#RUN docker-php-ext-install zip
+# Clean up
+# @TODO: Optimize image size
+RUN rm -rf /usr/src/php && \
+	apt-get purge -y -f \
+	build-essential \
+	&& \
+	apt-get clean autoclean && \
+	apt-get autoremove -y && \
+	rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www
-CMD ["php-fpm"]
+EXPOSE 9000
+CMD ["/usr/bin/supervisord"]
