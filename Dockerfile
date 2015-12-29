@@ -33,6 +33,7 @@ RUN apt-get update && apt-get install -y \
     mkdir -p /usr/src/php
 
 # Load and compile
+# @TODO: Integrate key verification
 RUN cd /usr/src/php && \
     wget http://de1.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror -O php-${PHP_VERSION}.tar.gz && \
     tar -xvzf php-${PHP_VERSION}.tar.gz && \
