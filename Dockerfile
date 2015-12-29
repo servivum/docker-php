@@ -3,7 +3,7 @@
 FROM servivum/debian:jessie
 MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
-# Versions
+# Version
 ENV PHP_VERSION "7.0.1"
 
 # Install build essentials
