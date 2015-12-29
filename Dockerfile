@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
     && \
     mkdir -p /usr/src/php
 
-# Load and compile PHP
+# Load and compile
 RUN cd /usr/src/php && \
     wget http://de1.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror -O php-${PHP_VERSION}.tar.gz && \
     tar -xvzf php-${PHP_VERSION}.tar.gz && \
@@ -53,15 +53,14 @@ RUN cd /usr/src/php && \
     --with-zlib \
     && \
     make && \
-    make install
+    make install && \
+    rm -rf /usr/src/php
 
-# Add php-fpm to supervisor
+# Add supervisor conf
 COPY etc/supervisor/conf.d/php-fpm.conf /etc/supervisor/conf.d/php-fpm.conf
 
 # Clean up
-# @TODO: Optimize image size
-RUN rm -rf /usr/src/php && \
-	apt-get purge -y -f \
+RUN apt-get purge -y -f \
 	build-essential \
 	&& \
 	apt-get clean autoclean && \
