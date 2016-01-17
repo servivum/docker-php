@@ -4,7 +4,7 @@ FROM servivum/debian:jessie
 MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
-ENV PHP_VERSION "7.0.1"
+ENV PHP_VERSION "7.0.2"
 
 # Install build essentials
 RUN apt-get update && apt-get install -y \
