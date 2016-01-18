@@ -1,0 +1,9 @@
+services:
+  - docker
+
+install:
+  - docker build -t php .
+  - docker run -d --name php php
+
+script:
+  - docker ps | grep -q php
