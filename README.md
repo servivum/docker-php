@@ -3,7 +3,7 @@
 [![Travis](https://img.shields.io/travis/Servivum/docker-php.svg?style=flat-square)](https://travis-ci.org/Servivum/docker-php)
 [![ImageLayers Size](https://img.shields.io/imagelayers/image-size/servivum/php/latest.svg?style=flat-square)](https://imagelayers.io/?images=servivum/php:latest)
 
-# PHP Docker Image with Necessary Extensions + Tools
+# PHP Docker Image with Necessary Extensions and Tools
 
 Dockerfile for creating PHP image with necessary extensions and handy tools, e.g. Composer.
 
