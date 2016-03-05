@@ -9,4 +9,5 @@ install:
 script:
   - docker ps | grep php
   - docker exec php which php
+  - docker exec php which php-fpm
   - docker exec php ps aux | grep php-fpm

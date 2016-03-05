@@ -34,16 +34,18 @@ RUN apt-get update && apt-get install -y \
 
 # Load and compile
 # @TODO: Integrate key verification
+# @TODO: Make /etc/php to default config path
 RUN cd /usr/src/php && \
     wget http://de1.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror -O php-${PHP_VERSION}.tar.gz && \
     tar -xvzf php-${PHP_VERSION}.tar.gz && \
     cd php-${PHP_VERSION}/ && \
+    mkdir -p /usr/local/etc/php/conf.d && \
     ./configure \
     --disable-cgi \
     --enable-fpm \
     --enable-mysqlnd \
-    --with-config-file-path="/etc/php" \
-    --with-config-file-scan-dir="/etc/php/conf.d" \
+    --with-config-file-path="/usr/local/etc/php" \
+    --with-config-file-scan-dir="/usr/local/etc/php/conf.d" \
     --with-curl \
     --with-gd \
     --with-pdo-mysql \
@@ -56,6 +58,9 @@ RUN cd /usr/src/php && \
     make && \
     make install && \
     rm -rf /usr/src/php
+
+# Add php-fpm pool config
+COPY etc/php/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 # Add supervisor conf
 COPY etc/supervisor/conf.d/php-fpm.conf /etc/supervisor/conf.d/php-fpm.conf
