@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y \
     librecode-dev \
     libxml2-dev \
     libxslt1-dev \
+    libmcrypt \
     pkg-config \
     && \
     mkdir -p /usr/src/php
@@ -49,6 +50,7 @@ RUN cd /usr/src/php && \
     --with-curl \
     --with-gd \
     --with-pdo-mysql \
+    --with-mcrypt \
     --with-mysqli \
     --with-openssl \
     --with-readline \
