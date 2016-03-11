@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
     librecode-dev \
     libxml2-dev \
     libxslt1-dev \
-    libmcrypt \
+    libmcrypt4 \
     pkg-config \
     && \
     mkdir -p /usr/src/php
