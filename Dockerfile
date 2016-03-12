@@ -4,7 +4,11 @@ FROM servivum/debian:jessie
 MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
+# URL: http://nl1.php.net/downloads.php
 ENV PHP_VERSION "7.0.4"
+ENV PHP_SHA256_CHECKSUM "f6cdac2fd37da0ac0bbcee0187d74b3719c2f83973dfe883d5cde81c356fe0a8"
+
+# URL:  https://getcomposer.org/download/
 ENV COMPOSER_VERSION "1.0.0-beta1"
 
 # Install build essentials & dependencies
@@ -38,10 +42,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     mkdir -p /usr/src/php && \
 
 # Load and compile PHP
-# @TODO: Integrate key verification
 # @TODO: Make /etc/php to default config path
     cd /usr/src/php && \
     wget http://de1.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror -O php-${PHP_VERSION}.tar.gz && \
+    openssl sha256 php-${PHP_VERSION}.tar.gz | grep "${PHP_SHA256_CHECKSUM}" && \
     tar -xvzf php-${PHP_VERSION}.tar.gz && \
     cd php-${PHP_VERSION}/ && \
     mkdir -p /usr/local/etc/php/conf.d && \
