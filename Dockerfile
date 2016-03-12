@@ -5,9 +5,10 @@ MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
 ENV PHP_VERSION "7.0.4"
+ENV COMPOSER_VERSION "1.0.0-beta1"
 
-# Install build essentials
-RUN apt-get update && apt-get install -y \
+# Install build essentials & dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libfcgi-dev \
     libfcgi0ldbl \
@@ -30,13 +31,16 @@ RUN apt-get update && apt-get install -y \
     libxslt1-dev \
     libmcrypt4 \
     pkg-config \
+    graphicsmagick \
+    graphicsmagick-imagemagick-compat \
+    ghostscript \
     && \
-    mkdir -p /usr/src/php
+    mkdir -p /usr/src/php && \
 
-# Load and compile
+# Load and compile PHP
 # @TODO: Integrate key verification
 # @TODO: Make /etc/php to default config path
-RUN cd /usr/src/php && \
+    cd /usr/src/php && \
     wget http://de1.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror -O php-${PHP_VERSION}.tar.gz && \
     tar -xvzf php-${PHP_VERSION}.tar.gz && \
     cd php-${PHP_VERSION}/ && \
@@ -44,6 +48,7 @@ RUN cd /usr/src/php && \
     ./configure \
     --disable-cgi \
     --enable-fpm \
+    --enable-mbstring \
     --enable-mysqlnd \
     --with-config-file-path="/usr/local/etc/php" \
     --with-config-file-scan-dir="/usr/local/etc/php/conf.d" \
@@ -59,21 +64,30 @@ RUN cd /usr/src/php && \
     && \
     make && \
     make install && \
-    rm -rf /usr/src/php
+    rm -rf /usr/src/php && \
+
+# Clean up
+    apt-get purge -y -f \
+    build-essential \
+    && \
+    apt-get clean autoclean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Composer
+RUN wget https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar && \
+    mv composer.phar /usr/local/bin/composer
+
+# Install Symfony Installer
+RUN curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
+    chmod a+x /usr/local/bin/symfony
 
 # Add php-fpm pool config
+# @TODO: Use php-fpm.conf from the compiling process and not an own version inside this repo.
 COPY etc/php/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 # Add supervisor conf
 COPY etc/supervisor/conf.d/php-fpm.conf /etc/supervisor/conf.d/php-fpm.conf
-
-# Clean up
-RUN apt-get purge -y -f \
-	build-essential \
-	&& \
-	apt-get clean autoclean && \
-	apt-get autoremove -y && \
-	rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www
 EXPOSE 9000
