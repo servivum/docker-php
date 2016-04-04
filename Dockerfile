@@ -5,8 +5,8 @@ MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
 # URL: http://nl1.php.net/downloads.php
-ENV PHP_VERSION "7.0.4"
-ENV PHP_SHA256_CHECKSUM "f6cdac2fd37da0ac0bbcee0187d74b3719c2f83973dfe883d5cde81c356fe0a8"
+ENV PHP_VERSION "7.0.5"
+ENV PHP_SHA256_CHECKSUM "f9d93419031b4df663fc48f03b8a833545de8776225e46637563e2be6029908d"
 
 # URL:  https://getcomposer.org/download/
 ENV COMPOSER_VERSION "1.0.0-beta1"
