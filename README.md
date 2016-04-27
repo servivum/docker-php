@@ -7,11 +7,11 @@ Dockerfile for creating PHP image with necessary extensions and handy tools, e.g
 
 ## What's inside?
 
-- Servivum Debian Base: [Read more](https://github.com/Servivum/docker-debian)
+- Servivum Debian Base: [Read more](https://github.com/servivum/docker-debian)
 - PHP: Server-side programming language
 - Composer: Package manager for PHP
 - Symfony Installer: Kick-start a Symfony project within seconds.
 
 ## Supported Tags
 
-- `fpm-7.0`, `fpm-7`, `fpm`, `latest` [(Dockerfile)](https://github.com/Servivum/docker-php)
+- `fpm-7.0`, `fpm-7`, `fpm`, `latest` [(Dockerfile)](https://github.com/servivum/docker-php)
