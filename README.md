@@ -1,4 +1,4 @@
-![PHP 7.0.4](https://img.shields.io/badge/PHP-7.0.4-brightgreen.svg?style=flat-square) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Travis](https://img.shields.io/travis/Servivum/docker-php.svg?style=flat-square)](https://travis-ci.org/Servivum/docker-php)
+![PHP 7.0.6](https://img.shields.io/badge/PHP-7.0.6-brightgreen.svg?style=flat-square) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Travis](https://img.shields.io/travis/Servivum/docker-php.svg?style=flat-square)](https://travis-ci.org/Servivum/docker-php)
 
 # PHP Docker Image with Necessary Extensions and Tools
 

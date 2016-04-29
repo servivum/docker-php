@@ -5,11 +5,11 @@ MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
 # URL: http://nl1.php.net/downloads.php
-ENV PHP_VERSION "7.0.5"
-ENV PHP_SHA256_CHECKSUM "f9d93419031b4df663fc48f03b8a833545de8776225e46637563e2be6029908d"
+ENV PHP_VERSION "7.0.6"
+ENV PHP_SHA256_CHECKSUM "f6b47cb3e02530d96787ae5c7888aefbd1db6ae4164d68b88808ee6f4da94277"
 
-# URL:  https://getcomposer.org/download/
-ENV COMPOSER_VERSION "1.0.0-beta1"
+# URL: https://getcomposer.org/download/
+ENV COMPOSER_VERSION "1.0.2"
 
 # Install build essentials & dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
