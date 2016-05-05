@@ -80,7 +80,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Install Composer
 RUN wget https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar && \
-    mv composer.phar /usr/local/bin/composer
+    mv composer.phar /usr/local/bin/composer && \
+    chmod u+x /usr/local/bin/composer
 
 # Install Symfony Installer
 RUN curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
