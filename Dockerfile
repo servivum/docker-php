@@ -9,7 +9,11 @@ ENV PHP_VERSION "7.0.6"
 ENV PHP_SHA256_CHECKSUM "f6b47cb3e02530d96787ae5c7888aefbd1db6ae4164d68b88808ee6f4da94277"
 
 # URL: https://getcomposer.org/download/
-ENV COMPOSER_VERSION "1.0.2"
+ENV COMPOSER_VERSION "1.1.0"
+
+# URL: https://phar.phpunit.de/
+ENV PHPUNIT_VERSION "5.3.4"
+ENV PHPUNIT_SHA256_CHECKSUM "ce354a3722dd40f2af807e6ddc091646b7364b14f639a1fdd077e1c95f8ad859"
 
 # Install build essentials & dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -83,9 +87,11 @@ RUN wget https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar && \
     mv composer.phar /usr/local/bin/composer && \
     chmod +x /usr/local/bin/composer
 
-# Install Symfony Installer
-RUN curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
-    chmod a+x /usr/local/bin/symfony
+# Install PHPUnit
+RUN wget https://phar.phpunit.de/phpunit-${PHPUNIT_VERSION}.phar && \
+    openssl sha256 phpunit-${PHPUNIT_VERSION}.phar | grep "${PHPUNIT_SHA256_CHECKSUM}" && \
+    mv phpunit-${PHPUNIT_VERSION}.phar /usr/local/bin/phpunit && \
+    chmod +x /usr/local/bin/phpunit
 
 # Add php-fpm pool config
 # @TODO: Use php-fpm.conf from the compiling process and not an own version inside this repo.
