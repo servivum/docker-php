@@ -1,4 +1,4 @@
-![PHP 7.0.7](https://img.shields.io/badge/PHP-7.0.7-brightgreen.svg?style=flat-square) ![Composer 1.1.0](https://img.shields.io/badge/Composer-1.1.0-brightgreen.svg?style=flat-square) ![PHPUnit 5.3.4](https://img.shields.io/badge/PHPUnit-5.3.4-brightgreen.svg?style=flat-square) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Travis](https://img.shields.io/travis/servivum/docker-php.svg?style=flat-square)](https://travis-ci.org/servivum/docker-php)
+![PHP 7.0.8](https://img.shields.io/badge/PHP-7.0.8-brightgreen.svg?style=flat-square) ![Composer 1.1.0](https://img.shields.io/badge/Composer-1.1.0-brightgreen.svg?style=flat-square) ![PHPUnit 5.3.4](https://img.shields.io/badge/PHPUnit-5.3.4-brightgreen.svg?style=flat-square) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Travis](https://img.shields.io/travis/servivum/docker-php.svg?style=flat-square)](https://travis-ci.org/servivum/docker-php)
 
 # PHP Docker Image with Necessary Extensions and Tools
 
