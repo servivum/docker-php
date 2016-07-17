@@ -9,7 +9,7 @@ ENV PHP_VERSION "7.0.8"
 ENV PHP_SHA256_CHECKSUM "1f024fa6d87594b99fa312e3185c357dcffa42e07d21c726f41d1fa6f773720b"
 
 # URL: https://getcomposer.org/download/
-ENV COMPOSER_VERSION "1.1.2"
+ENV COMPOSER_VERSION "1.1.3"
 
 # URL: https://phar.phpunit.de/
 ENV PHPUNIT_VERSION "5.4.6"
