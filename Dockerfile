@@ -4,9 +4,9 @@ FROM servivum/debian:jessie
 MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
-# URL: http://nl1.php.net/downloads.php
-ENV PHP_VERSION "7.0.8"
-ENV PHP_SHA256_CHECKSUM "1f024fa6d87594b99fa312e3185c357dcffa42e07d21c726f41d1fa6f773720b"
+# URL: https://secure.php.net/downloads.php
+ENV PHP_VERSION "7.0.9"
+ENV PHP_SHA256_CHECKSUM "93895a6a610c94751c890e5ee91a7f4bc0eae476b95fe30425d13f7ae88753d5"
 
 # URL: https://getcomposer.org/download/
 ENV COMPOSER_VERSION "1.1.3"
