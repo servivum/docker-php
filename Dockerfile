@@ -12,8 +12,8 @@ ENV PHP_SHA256_CHECKSUM "46216e05db09c0fffbf832e3b64f3722ccbdd6d4ae16d9791e41adf
 ENV COMPOSER_VERSION "1.2.0"
 
 # URL: https://phar.phpunit.de/
-ENV PHPUNIT_VERSION "5.5.2"
-ENV PHPUNIT_SHA256_CHECKSUM "fed88f9752c1abcb9367befc221da88c7b15d0f7f864fce671dd13456b822607"
+ENV PHPUNIT_VERSION "5.5.4"
+ENV PHPUNIT_SHA256_CHECKSUM "6decad1e5236cfaebf54c1eda40d75f0dd3aee34e75a5f0d27da66062d97c9a2"
 
 # Install build essentials & dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
