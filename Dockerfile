@@ -5,11 +5,11 @@ MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
 # URL: https://secure.php.net/downloads.php
-ENV PHP_VERSION "7.0.10"
-ENV PHP_SHA256_CHECKSUM "46216e05db09c0fffbf832e3b64f3722ccbdd6d4ae16d9791e41adf0a4b00641"
+ENV PHP_VERSION "7.0.11"
+ENV PHP_SHA256_CHECKSUM "02d27b5d140dbad8d400a95af808e1e9ce87aa8d2a2100870734ba26e6700d79"
 
 # URL: https://getcomposer.org/download/
-ENV COMPOSER_VERSION "1.2.0"
+ENV COMPOSER_VERSION "1.2.1"
 
 # URL: https://phar.phpunit.de/
 ENV PHPUNIT_VERSION "5.5.4"
