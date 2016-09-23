@@ -58,6 +58,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     --enable-fpm \
     --enable-mbstring \
     --enable-mysqlnd \
+    --enable-zip \
     --with-config-file-path="/usr/local/etc/php" \
     --with-config-file-scan-dir="/usr/local/etc/php/conf.d" \
     --with-curl \
