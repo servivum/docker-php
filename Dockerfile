@@ -42,7 +42,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     graphicsmagick \
     graphicsmagick-imagemagick-compat \
     ghostscript \
-    zlib \
     && \
     mkdir -p /usr/src/php && \
 
