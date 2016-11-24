@@ -15,3 +15,5 @@ echo "Checking existence of some binaries and packages ..."
 docker exec php which php
 docker exec php which php-fpm
 docker exec php ps aux | grep php-fpm
+docker exec php which composer
+docker exec php which phpunit
