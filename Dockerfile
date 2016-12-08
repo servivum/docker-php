@@ -5,15 +5,15 @@ MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
 # URL: https://secure.php.net/downloads.php
-ENV PHP_VERSION "7.0.13"
-ENV PHP_SHA256_CHECKSUM "c8d8cf1b29e7f7e89be9ee64f453cb7ef6d20e1d13a83cba037bd654ef2da42c"
+ENV PHP_VERSION "7.0.14"
+ENV PHP_SHA256_CHECKSUM "9e84c5b13005c56374730edf534fe216f6a2e63792a9703d4b894e770bbccbae"
 
 # URL: https://getcomposer.org/download/
-ENV COMPOSER_VERSION "1.2.2"
+ENV COMPOSER_VERSION "1.2.4"
 
 # URL: https://phar.phpunit.de/
-ENV PHPUNIT_VERSION "5.6.3"
-ENV PHPUNIT_SHA256_CHECKSUM "5680598bf885805a124f82e5fab49874e75c1ee8461db31bb89f53aac3941ed6"
+ENV PHPUNIT_VERSION "5.7.2"
+ENV PHPUNIT_SHA256_CHECKSUM "989137a019a5cbdf7aac0d80df4942d5308de91c46eab7c18ed01fc78465d027"
 
 # Install build essentials & dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
