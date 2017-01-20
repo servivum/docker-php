@@ -5,8 +5,8 @@ MAINTAINER Patrick Baber <patrick.baber@servivum.com>
 
 # Version
 # URL: https://secure.php.net/downloads.php
-ENV PHP_VERSION "7.0.14"
-ENV PHP_SHA256_CHECKSUM "9e84c5b13005c56374730edf534fe216f6a2e63792a9703d4b894e770bbccbae"
+ENV PHP_VERSION "7.0.15"
+ENV PHP_SHA256_CHECKSUM "a8c8f947335683fa6dd1b7443ed70f2a42bc33e8b6c215f139138cee89e47dd9"
 
 # URL: https://getcomposer.org/download/
 ENV COMPOSER_VERSION "1.2.4"
@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libmcrypt-dev \
     libssl-dev \
     libc-client2007e \
-    libc-client2007e-dev \
+#    libc-client2007e-dev \
     libxml2-dev \
     libbz2-dev \
     libcurl4-openssl-dev \
