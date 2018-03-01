@@ -2,18 +2,16 @@
 
 # PHP Docker Image
 
-Dockerfile for creating lightweight PHP images bases on Alpine Linux with Composer. See 
+Dockerfile for creating lightweight PHP images based on Alpine Linux with Composer. See 
 [Docker Hub](https://hub.docker.com/r/servivum/php) for more details about the image.
 
 ## Supported Tags
 
-- `5.6-cli-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php)
-- `5.6-fpm-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php)
-- `7.0-cli-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php)
-- `7.0-fpm-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php)
-- `7.1-cli-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php)
-- `7.1-fpm-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php)
-- `7.2-cli-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php)
-- `7.2-fpm-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php)
-
-## Build images from Git repo
+- `5.6-cli-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/cli-alpine/Dockerfile)
+- `5.6-fpm-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/fpm-alpine/Dockerfile)
+- `7.0-cli-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.0/cli-alpine/Dockerfile)
+- `7.0-fpm-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.0/fpm-alpine/Dockerfile)
+- `7.1-cli-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/cli-alpine/Dockerfile)
+- `7.1-fpm-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/fpm-alpine/Dockerfile)
+- `7.2-cli-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.2/cli-alpine/Dockerfile)
+- `7.2-fpm-alpine`, [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.2/fpm-alpine/Dockerfile)
