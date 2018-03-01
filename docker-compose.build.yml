@@ -1,0 +1,35 @@
+version: "3.4"
+
+services:
+  php-5.6-cli-alpine:
+    build:
+      context: .
+      dockerfile: 5.6/cli-alpine/Dockerfile
+  php-5.6-fpm-alpine:
+    build:
+      context: .
+      dockerfile: 5.6/fpm-alpine/Dockerfile
+  php-7.0-cli-alpine:
+    build:
+      context: .
+      dockerfile: 7.0/cli-alpine/Dockerfile
+  php-7.0-fpm-alpine:
+    build:
+      context: .
+      dockerfile: 7.0/fpm-alpine/Dockerfile
+  php-7.1-cli-alpine:
+    build:
+      context: .
+      dockerfile: 7.1/cli-alpine/Dockerfile
+  php-7.1-fpm-alpine:
+    build:
+      context: .
+      dockerfile: 7.1/fpm-alpine/Dockerfile
+  php-7.2-cli-alpine:
+    build:
+      context: .
+      dockerfile: 7.2/cli-alpine/Dockerfile
+  php-7.2-fpm-alpine:
+    build:
+      context: .
+      dockerfile: 7.2/fpm-alpine/Dockerfile
