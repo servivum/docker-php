@@ -9,9 +9,3 @@ RUN wget https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar && \
     openssl sha256 composer.phar | grep "${COMPOSER_SHA256_HASH}" && \
     mv composer.phar /usr/local/bin/composer && \
     chmod +x /usr/local/bin/composer
-
-# Create project root
-RUN mkdir -p /var/www
-
-# Change work directory to project root
-WORKDIR /var/www
