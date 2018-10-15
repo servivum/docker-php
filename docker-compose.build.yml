@@ -5,10 +5,18 @@ services:
     build:
       context: .
       dockerfile: 5.6/cli-alpine/Dockerfile
+  php-5.6-cli-stretch:
+    build:
+      context: .
+      dockerfile: 5.6/cli-stretch/Dockerfile
   php-5.6-fpm-alpine:
     build:
       context: .
       dockerfile: 5.6/fpm-alpine/Dockerfile
+  php-5.6-fpm-stretch:
+    build:
+      context: .
+      dockerfile: 5.6/fpm-stretch/Dockerfile
   php-7.0-cli-alpine:
     build:
       context: .
