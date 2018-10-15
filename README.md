@@ -2,7 +2,7 @@
 
 # PHP Docker Image
 
-Dockerfile for creating lightweight PHP images based on Alpine Linux with Composer. See 
+Dockerfile for creating lightweight PHP images with Composer based on Alpine Linux. See 
 [Docker Hub](https://hub.docker.com/r/servivum/php) for more details about the image.
 
 ## Supported Tags
