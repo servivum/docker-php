@@ -1,4 +1,4 @@
-![PHP 7.2](https://img.shields.io/badge/PHP-7.2-brightgreen.svg?style=flat-square) ![PHP 7.1](https://img.shields.io/badge/PHP-7.1-brightgreen.svg?style=flat-square) ![PHP 7.0](https://img.shields.io/badge/PHP-7.0-brightgreen.svg?style=flat-square) ![PHP 5.6](https://img.shields.io/badge/PHP-5.6-brightgreen.svg?style=flat-square) ![Composer 1.8](https://img.shields.io/badge/Composer-1.7-brightgreen.svg?style=flat-square) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Travis](https://img.shields.io/travis/servivum/docker-php.svg?style=flat-square)](https://travis-ci.org/servivum/docker-php)
+![PHP 7.3](https://img.shields.io/badge/PHP-7.3-brightgreen.svg?style=flat-square) ![PHP 7.2](https://img.shields.io/badge/PHP-7.2-brightgreen.svg?style=flat-square) ![PHP 7.1](https://img.shields.io/badge/PHP-7.1-brightgreen.svg?style=flat-square) ![PHP 7.0](https://img.shields.io/badge/PHP-7.0-brightgreen.svg?style=flat-square) ![PHP 5.6](https://img.shields.io/badge/PHP-5.6-brightgreen.svg?style=flat-square) ![Composer 1.8](https://img.shields.io/badge/Composer-1.7-brightgreen.svg?style=flat-square) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Travis](https://img.shields.io/travis/servivum/docker-php.svg?style=flat-square)](https://travis-ci.org/servivum/docker-php)
 
 # PHP Docker Image
 
@@ -7,6 +7,8 @@ Dockerfile for creating lightweight PHP images with Composer based on Alpine Lin
 
 ## Supported Tags
 
+- `7.3-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.3/cli-alpine/Dockerfile)
+- `7.3-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.3/fpm-alpine/Dockerfile)
 - `7.2-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.2/cli-alpine/Dockerfile)
 - `7.2-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.2/fpm-alpine/Dockerfile)
 - `7.1-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/cli-alpine/Dockerfile)
