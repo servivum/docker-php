@@ -1,8 +1,8 @@
 FROM php:5.6-fpm-stretch
 LABEL maintainer "Patrick.Baber <patrick.baber@servivum.com>"
 
-ENV COMPOSER_VERSION "1.7.2"
-ENV COMPOSER_SHA256_HASH "ec3428d049ae8877f7d102c2ee050dbd51a160fc2dde323f3e126a3b3846750e"
+ENV COMPOSER_VERSION "1.8.0"
+ENV COMPOSER_SHA256_HASH "0901a84d56f6d6ae8f8b96b0c131d4f51ccaf169d491813d2bcedf2a6e4cefa6"
 
 # Install Composer
 RUN curl -o composer.phar https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar && \
