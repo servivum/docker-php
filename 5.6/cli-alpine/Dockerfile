@@ -1,8 +1,8 @@
 FROM php:5.6-cli-alpine
 LABEL maintainer "Patrick.Baber <patrick.baber@servivum.com>"
 
-ENV COMPOSER_VERSION "1.8.0"
-ENV COMPOSER_SHA256_HASH "0901a84d56f6d6ae8f8b96b0c131d4f51ccaf169d491813d2bcedf2a6e4cefa6"
+ENV COMPOSER_VERSION "1.8.3"
+ENV COMPOSER_SHA256_HASH "5733ae9516e9185b7c3328d16dac75f3475f8ef137572dfb497f0f298157df33"
 
 # Install Composer
 RUN wget https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar && \
