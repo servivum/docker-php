@@ -15,6 +15,7 @@ Dockerfile for creating lightweight PHP images with Composer based on Alpine Lin
 - `7.1-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/fpm-alpine/Dockerfile)
 - `7.0-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.0/cli-alpine/Dockerfile)
 - `7.0-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.0/fpm-alpine/Dockerfile)
+- `7.0-fpm-alpine-common` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.0/fpm-alpine-common/Dockerfile)
 - `5.6-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/cli-alpine/Dockerfile)
 - `5.6-cli-stretch` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/cli-stretch/Dockerfile)
 - `5.6-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/fpm-alpine/Dockerfile)
