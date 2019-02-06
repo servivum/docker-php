@@ -20,21 +20,22 @@ Dockerfile for creating lightweight PHP images with Composer based on Alpine Lin
 - `5.6-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/cli-alpine/Dockerfile)
 - `5.6-cli-stretch` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/cli-stretch/Dockerfile)
 - `5.6-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/fpm-alpine/Dockerfile)
+- `5.6-fpm-alpine-common` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/fpm-alpine-common/Dockerfile)
 - `5.6-fpm-stretch` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/fpm-stretch/Dockerfile)
 
 ## Image Variants
 
-All variants are based on the tiny Linux distribution Alpine. The result is a really small image size. Composer is preinstalled in all variants.
+All variants has Composer preinstalled.
 
-### `servivum/php:<version>-cli-alpine`
+### `servivum/php:<version>-cli-<distro>`
 
 This variant contains the PHP CLI tool with default mods. If you need a web server, this is probably not the image you are looking for. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as a base from which to build other images.
 
-### `servivum/php:<version>-fpm-alpine`
+### `servivum/php:<version>-fpm-<distro>`
 
 This variant contains PHP-FPM, which is a FastCGI implementation for PHP.
 
-### `servivum/php:<version>-fpm-alpine-common`
+### `servivum/php:<version>-fpm-<distro>-common`
 
 This variant contains PHP-FPM like the variant above but with these preinstalled PHP extensions:
 
