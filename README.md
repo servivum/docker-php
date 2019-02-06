@@ -13,6 +13,7 @@ Dockerfile for creating lightweight PHP images with Composer based on Alpine Lin
 - `7.2-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.2/fpm-alpine/Dockerfile)
 - `7.1-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/cli-alpine/Dockerfile)
 - `7.1-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/fpm-alpine/Dockerfile)
+- `7.1-fpm-alpine-common` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/fpm-alpine-common/Dockerfile)
 - `7.0-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.0/cli-alpine/Dockerfile)
 - `7.0-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.0/fpm-alpine/Dockerfile)
 - `7.0-fpm-alpine-common` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.0/fpm-alpine-common/Dockerfile)
@@ -20,3 +21,32 @@ Dockerfile for creating lightweight PHP images with Composer based on Alpine Lin
 - `5.6-cli-stretch` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/cli-stretch/Dockerfile)
 - `5.6-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/fpm-alpine/Dockerfile)
 - `5.6-fpm-stretch` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/5.6/fpm-stretch/Dockerfile)
+
+## Image Variants
+
+All variants are based on the tiny Linux distribution Alpine. The result is a really small image size. Composer is preinstalled in all variants.
+
+### `servivum/php:<version>-cli-alpine`
+
+This variant contains the PHP CLI tool with default mods. If you need a web server, this is probably not the image you are looking for. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as a base from which to build other images.
+
+### `servivum/php:<version>-fpm-alpine`
+
+This variant contains PHP-FPM, which is a FastCGI implementation for PHP.
+
+### `servivum/php:<version>-fpm-alpine-common`
+
+This variant contains PHP-FPM like the variant above but with these preinstalled PHP extensions:
+
+- bcmath
+- bz2
+- calendar
+- iconv
+- intl
+- gd
+- mbstring
+- mcrypt (only PHP ≤ 7.1)
+- mysqli
+- pdo_mysql
+- soap
+- zip
