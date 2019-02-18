@@ -8,9 +8,12 @@ Dockerfile for creating lightweight PHP images with Composer based on Alpine Lin
 ## Supported Tags
 
 - `7.3-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.3/cli-alpine/Dockerfile)
-- `7.3-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.3/fpm-alpine/Dockerfile)
+- `7.3-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.3/
+fpm-alpine/Dockerfile)
+- `7.3-fpm-alpine-common` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.3/fpm-alpine-common/Dockerfile)
 - `7.2-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.2/cli-alpine/Dockerfile)
 - `7.2-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.2/fpm-alpine/Dockerfile)
+- `7.2-fpm-alpine-common` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.2/fpm-alpine-common/Dockerfile)
 - `7.1-cli-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/cli-alpine/Dockerfile)
 - `7.1-fpm-alpine` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/fpm-alpine/Dockerfile)
 - `7.1-fpm-alpine-common` [(Dockerfile)](https://github.com/servivum/docker-php/blob/master/7.1/fpm-alpine-common/Dockerfile)

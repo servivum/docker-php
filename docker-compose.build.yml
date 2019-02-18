@@ -65,3 +65,7 @@ services:
     build:
       context: .
       dockerfile: 7.3/fpm-alpine/Dockerfile
+  php-7.3-fpm-alpine-common:
+    build:
+      context: .
+      dockerfile: 7.3/fpm-alpine-common/Dockerfile
