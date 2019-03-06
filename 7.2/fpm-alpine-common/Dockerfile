@@ -1,8 +1,8 @@
 FROM php:7.2-fpm-alpine
 LABEL maintainer "Patrick.Baber <patrick.baber@servivum.com>"
 
-ENV COMPOSER_VERSION "1.8.3"
-ENV COMPOSER_SHA256_HASH "5733ae9516e9185b7c3328d16dac75f3475f8ef137572dfb497f0f298157df33"
+ENV COMPOSER_VERSION "1.8.4"
+ENV COMPOSER_SHA256_HASH "1722826c8fbeaf2d6cdd31c9c9af38694d6383a0f2bf476fe6bbd30939de058a"
 
 # Install PHP Extensions
 RUN buildDeps=" \
