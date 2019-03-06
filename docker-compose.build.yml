@@ -58,14 +58,17 @@ services:
       context: .
       dockerfile: 7.2/fpm-alpine-common/Dockerfile
   php-7.3-cli-alpine:
+    image: servivum/php:7.3-cli-alpine
     build:
       context: .
       dockerfile: 7.3/cli-alpine/Dockerfile
   php-7.3-fpm-alpine:
+    image: servivum/php:7.3-fpm-alpine
     build:
       context: .
       dockerfile: 7.3/fpm-alpine/Dockerfile
   php-7.3-fpm-alpine-common:
+    image: servivum/php:7.3-fpm-alpine-common
     build:
       context: .
       dockerfile: 7.3/fpm-alpine-common/Dockerfile
