@@ -4,6 +4,12 @@ LABEL maintainer "Patrick.Baber <patrick.baber@servivum.com>"
 ENV COMPOSER_VERSION "1.8.4"
 ENV COMPOSER_SHA256_HASH "1722826c8fbeaf2d6cdd31c9c9af38694d6383a0f2bf476fe6bbd30939de058a"
 
+# Change UID and GID of www-data user
+RUN apk --no-cache add shadow && \
+    groupmod -g 101 www-data && \
+    usermod -u 100 -g 101 www-data && \
+    apk del shadow
+
 # Install Composer
 RUN wget https://getcomposer.org/download/${COMPOSER_VERSION}/composer.phar && \
     openssl sha256 composer.phar | grep "${COMPOSER_SHA256_HASH}" && \
