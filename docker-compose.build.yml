@@ -2,61 +2,90 @@ version: "3.7"
 
 services:
   php-5.6-cli-alpine:
+    image: servivum/php:5.6-cli-alpine
     build:
       context: .
       dockerfile: 5.6/cli-alpine/Dockerfile
   php-5.6-cli-stretch:
+    image: servivum/php:5.6-cli-stretch
     build:
       context: .
       dockerfile: 5.6/cli-stretch/Dockerfile
   php-5.6-fpm-alpine:
+    image: servivum/php:5.6-fpm-alpine
     build:
       context: .
       dockerfile: 5.6/fpm-alpine/Dockerfile
   php-5.6-fpm-alpine-common:
+    image: servivum/php:5.6-fpm-alpine-common
     build:
       context: .
       dockerfile: 5.6/fpm-alpine-common/Dockerfile
   php-5.6-fpm-stretch:
+    image: servivum/php:5.6-fpm-stretch
     build:
       context: .
       dockerfile: 5.6/fpm-stretch/Dockerfile
   php-7.0-cli-alpine:
+    image: servivum/php:7.0-cli-alpine
     build:
       context: .
       dockerfile: 7.0/cli-alpine/Dockerfile
   php-7.0-fpm-alpine:
+    image: servivum/php:7.0-fpm-alpine
     build:
       context: .
       dockerfile: 7.0/fpm-alpine/Dockerfile
   php-7.0-fpm-alpine-common:
+    image: servivum/php:7.0-fpm-alpine-common
     build:
       context: .
       dockerfile: 7.0/fpm-alpine-common/Dockerfile
+  php-7.0-fpm-stretch:
+    image: servivum/php:7.0-fpm-stretch
+    build:
+      context: .
+      dockerfile: 7.0/fpm-stretch/Dockerfile
   php-7.1-cli-alpine:
+    image: servivum/php:7.1-cli-alpine
     build:
       context: .
       dockerfile: 7.1/cli-alpine/Dockerfile
   php-7.1-fpm-alpine:
+    image: servivum/php:7.1-fpm-alpine
     build:
       context: .
       dockerfile: 7.1/fpm-alpine/Dockerfile
   php-7.1-fpm-alpine-common:
+    image: servivum/php:7.1-fpm-alpine-common
     build:
       context: .
       dockerfile: 7.1/fpm-alpine-common/Dockerfile
+  php-7.1-fpm-stretch:
+    image: servivum/php:7.1-fpm-stretch
+    build:
+      context: .
+      dockerfile: 7.3/fpm-stretch/Dockerfile
   php-7.2-cli-alpine:
+    image: servivum/php:7.2-cli-alpine
     build:
       context: .
       dockerfile: 7.2/cli-alpine/Dockerfile
   php-7.2-fpm-alpine:
+    image: servivum/php:7.2-fpm-alpine
     build:
       context: .
       dockerfile: 7.2/fpm-alpine/Dockerfile
   php-7.2-fpm-alpine-common:
+    image: servivum/php:7.2-fpm-alpine-common
     build:
       context: .
       dockerfile: 7.2/fpm-alpine-common/Dockerfile
+  php-7.2-fpm-stretch:
+    image: servivum/php:7.2-fpm-stretch
+    build:
+      context: .
+      dockerfile: 7.2/fpm-stretch/Dockerfile
   php-7.3-cli-alpine:
     image: servivum/php:7.3-cli-alpine
     build:
@@ -72,3 +101,8 @@ services:
     build:
       context: .
       dockerfile: 7.3/fpm-alpine-common/Dockerfile
+  php-7.3-fpm-stretch:
+    image: servivum/php:7.3-fpm-stretch
+    build:
+      context: .
+      dockerfile: 7.3/fpm-stretch/Dockerfile
