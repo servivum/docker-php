@@ -7,5 +7,8 @@ RUN apk --no-cache add shadow && \
     usermod -u 100 -g 101 www-data && \
     apk del shadow
 
+# Use the default production configuration
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
 # Install Composer
 COPY --from=composer:1.8 /usr/bin/composer /usr/bin/local/composer

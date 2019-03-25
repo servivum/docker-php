@@ -48,5 +48,8 @@ RUN buildDeps=" \
     docker-php-ext-install zip && \
     apk del $buildDeps
 
+# Use the default production configuration
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
 # Install Composer
 COPY --from=composer:1.8 /usr/bin/composer /usr/bin/local/composer
