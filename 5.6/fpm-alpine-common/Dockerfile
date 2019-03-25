@@ -49,6 +49,10 @@ RUN buildDeps=" \
     docker-php-ext-install exif && \
     apk del $buildDeps
 
+# Fix LibreSSL config
+RUN sed -i 's/#default_bits/default_bits/g' /etc/ssl/openssl.cnf && \
+    sed -i 's/#default_md/default_md/g' /etc/ssl/openssl.cnf
+
 # Use the default production configuration
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
