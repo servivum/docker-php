@@ -17,6 +17,7 @@ RUN buildDeps=" \
         git \
         freetype-dev \
         icu-dev \
+        imagemagick \
         libjpeg-turbo-dev \
         libldap \
         libpng-dev \
