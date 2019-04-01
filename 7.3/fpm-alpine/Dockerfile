@@ -11,4 +11,4 @@ RUN apk --no-cache add shadow && \
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 # Install Composer
-COPY --from=composer:1.8 /usr/bin/composer /usr/bin/local/composer
+COPY --from=composer:1.8 /usr/bin/composer /usr/local/bin/composer
