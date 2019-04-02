@@ -71,6 +71,11 @@ services:
     build:
       context: .
       dockerfile: 7.2/cli-alpine/Dockerfile
+  php-7.2-cli-stretch-common:
+    image: servivum/php:7.2-cli-stretch-common
+    build:
+      context: .
+      dockerfile: 7.2/cli-stretch-common/Dockerfile
   php-7.2-fpm-alpine:
     image: servivum/php:7.2-fpm-alpine
     build:
