@@ -72,6 +72,12 @@ RUN buildDeps=" \
     apt-get purge -y --auto-remove $buildDeps && \
     rm -r /var/lib/apt/lists/*
 
+# Install cron
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y cron && \
+    rm -r /var/lib/apt/lists/*
+
 # Use the default production configuration
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 

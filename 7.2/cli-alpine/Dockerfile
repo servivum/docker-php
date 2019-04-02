@@ -7,6 +7,45 @@ RUN apk --no-cache add shadow && \
     usermod -u 100 -g 101 www-data && \
     apk del shadow
 
+# Install PHP Extensions
+RUN buildDeps=" \
+        bzip2-dev \
+        libsasl \
+    " \
+    runtimeDeps=" \
+        curl \
+        git \
+        freetype-dev \
+        icu-dev \
+        imagemagick \
+        libjpeg-turbo-dev \
+        libldap \
+        libpng-dev \
+        libxml2-dev \
+        zlib-dev \
+    " && \
+    apk add --no-cache $buildDeps $runtimeDeps && \
+    docker-php-ext-install \
+    bcmath \
+    bz2 \
+    calendar \
+    iconv \
+    intl \
+    mbstring \
+    mysqli \
+    opcache \
+    pdo_mysql \
+    soap \
+    zip \
+    && \
+    docker-php-ext-configure gd \
+        --with-freetype-dir=/usr/include/ \
+        --with-jpeg-dir=/usr/include/ \
+    && \
+    docker-php-ext-install gd && \
+    docker-php-ext-install exif && \
+    apk del $buildDeps
+
 # Use the default production configuration
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 

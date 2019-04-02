@@ -71,31 +71,21 @@ services:
     build:
       context: .
       dockerfile: 7.2/cli-alpine/Dockerfile
-  php-7.2-cli-stretch-common:
-    image: servivum/php:7.2-cli-stretch-common
+  php-7.2-cli-stretch:
+    image: servivum/php:7.2-cli-stretch
     build:
       context: .
-      dockerfile: 7.2/cli-stretch-common/Dockerfile
+      dockerfile: 7.2/cli-stretch/Dockerfile
   php-7.2-fpm-alpine:
     image: servivum/php:7.2-fpm-alpine
     build:
       context: .
       dockerfile: 7.2/fpm-alpine/Dockerfile
-  php-7.2-fpm-alpine-common:
-    image: servivum/php:7.2-fpm-alpine-common
-    build:
-      context: .
-      dockerfile: 7.2/fpm-alpine-common/Dockerfile
   php-7.2-fpm-stretch:
     image: servivum/php:7.2-fpm-stretch
     build:
       context: .
       dockerfile: 7.2/fpm-stretch/Dockerfile
-  php-7.2-fpm-stretch-common:
-    image: servivum/php:7.2-fpm-stretch-common
-    build:
-      context: .
-      dockerfile: 7.2/fpm-stretch-common/Dockerfile
   php-7.3-cli-alpine:
     image: servivum/php:7.3-cli-alpine
     build:
