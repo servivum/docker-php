@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+COMMAND="${@:-0}"
+
+# first arg is `-f` or `--some-option`
+if [ "${1#-}" != "$1" ]; then
+	php "$@"
+
+elif [ "$COMMAND" == "cron" ]; then
+    # TODO: process crontab file
+
+    echo "Running cron …"
+    crontab /etc/cron.d/cron
+    exec cron -f
+
+elif [ "$COMMAND" == "php-fpm" ]; then
+    exec "$@"
+else
+    echo "Could not match container command \"$@\""
+    exit 1
+fi
